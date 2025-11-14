@@ -30,7 +30,7 @@ public class Main {
 
         System.out.println("--------------------------------");
         System.out.println("🤑 Welcome to the Slot Game 🤑");
-        System.out.println("     Symbols :🍒🍉🍋🔔⭐      ");
+        System.out.println("     Symbols :💎👑🎁🔔⭐      ");
         System.out.println("--------------------------------");
         System.out.println();
 
@@ -63,11 +63,11 @@ public class Main {
                 }
             System.out.println("Do you want to play again(Y/N):");
             playAgain=scanner.nextLine().toUpperCase();
-            if(playAgain.equals("Y")){
+            if(!playAgain.equals("Y")){
                 if(balance==0){
                     System.out.println("\nInsufficient Balance For Bet!");
                 }
-            continue;
+                break;
             }
 
         }
@@ -76,7 +76,7 @@ public class Main {
 
     static String[] spinRow() {
 
-        String[] symbols = {"🍒", "🍉", "🍋", "🔔", "⭐"};
+        String[] symbols = {"🎁", "👑", "💎", "🔔", "⭐"};
         String[] row = new String[3];
         Random random = new Random();
 
@@ -96,11 +96,11 @@ public class Main {
 
         if (row[0].equals(row[1]) && row[1].equals(row[2]) ||row[0].equals(row[1]) || row[1].equals(row[2])) {
             return switch (row[0]) {
-                case "🍒"->bet * 3;
-                case "🍉"->bet * 4;
-                case "🍋"-> bet * 5;
-                case "🔔"->bet * 10;
-                case "⭐"-> bet * 20;
+                case "⭐"->bet * 3;
+                case "🔔"->bet * 4;
+                case "💎"-> bet * 5;
+                case "🎁"->bet * 10;
+                case "👑"-> bet * 20;
                 default -> 0;
             };
         }
